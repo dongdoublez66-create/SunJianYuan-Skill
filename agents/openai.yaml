@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sun Jianyuan Style"
+  short_description: "Draft and revise papers in Sun Jianyuan aligned style"
+  default_prompt: "Use $sun-jianyuan-style to revise this manuscript section for Sun Jianyuan aligned academic style."
