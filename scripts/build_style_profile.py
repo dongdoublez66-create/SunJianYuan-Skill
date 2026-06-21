@@ -431,7 +431,7 @@ def render_markdown(results: dict[str, object]) -> str:
     lines = [
         "# Sun Jianyuan Style Profile",
         "",
-        "This profile summarizes aggregate traits from the supplied 27-title list plus any auxiliary PDFs in the local article folder. It avoids long verbatim excerpts.",
+        "This note records what can be learned from the current corpus. It keeps the focus on patterns rather than excerpts: terms that recur, moves that organize the argument, and the level of caution used when moving from data to mechanism.",
         "",
         "## Corpus Coverage",
         "",
@@ -443,16 +443,16 @@ def render_markdown(results: dict[str, object]) -> str:
         f"- Target abstract/title only: {tier_counts.get('target abstract/title only', 0)}",
         f"- Target metadata/title only: {tier_counts.get('metadata/title only', 0)}",
         "",
-        "Read `references/corpus-coverage.md` before assuming that a style point is based on all 27 full texts.",
+        "Check `references/corpus-coverage.md` before treating any pattern here as if it came from all 27 full texts.",
         "",
-        "## Aggregate Text Statistics",
+        "## Text Statistics",
         "",
         f"- Sources analyzed: {results['document_count']}",
         f"- Approximate words extracted: {results['word_count']}",
         f"- Sentences analyzed: {results['sentence_count']}",
         f"- Sentence length: mean {stats['mean']:.1f} words, median {stats['median']:.0f}, p90 {stats['p90']:.0f}",
         "",
-        "## Documents And Evidence Tier",
+        "## Documents And Evidence Level",
         "",
     ]
     for doc in results["documents"]:
@@ -475,15 +475,15 @@ def render_markdown(results: dict[str, object]) -> str:
     lines.extend(
         [
             "",
-            "## Drafting Implications",
+            "## Practical Takeaways",
             "",
-            "- Favor a mechanism-first frame: define a biological process, name the unresolved causal step, then connect the experimental system to that mechanism.",
-            "- Balance assertive evidence verbs with cautious interpretation: use strong verbs for direct observations and hedged verbs for models, implications, and mechanisms that remain inferential.",
-            "- Keep claims anchored to synaptic, circuit, channel, release, endocytosis/exocytosis, or structural-function language when the science allows.",
-            "- Use compact transitions that synthesize evidence before interpretation, especially in abstracts, introductions, and discussion openings.",
-            "- Avoid ornate rhetoric. Prefer precise technical nouns, active analytical verbs, and restrained significance claims.",
-            "- When revising, preserve scientific uncertainty. Do not convert speculative mechanistic language into overclaiming.",
-            "- Treat style features from abstract/title-only entries as weak evidence; rely more on PDF and public HTML full-text entries.",
+            "- Start from the mechanism: name the biological process, identify the unresolved step, and then bring in the experiment.",
+            "- Use strong verbs for direct observations, but soften the sentence when the claim becomes a model or interpretation.",
+            "- Keep the argument close to synaptic, circuit, channel, release, endocytosis/exocytosis, or structure-function language when the user's science allows it.",
+            "- Let transitions do real work: contrast, add evidence, or synthesize before interpreting.",
+            "- Prefer technical nouns and analytical verbs over decorative adjectives.",
+            "- Preserve uncertainty. A speculative mechanism should not be revised into a proven one.",
+            "- Treat title-only entries as background signal, not as equal evidence with full-text papers.",
         ]
     )
     return "\n".join(lines) + "\n"
@@ -493,7 +493,7 @@ def render_coverage(results: dict[str, object]) -> str:
     lines = [
         "# Corpus Coverage",
         "",
-        "This table records what was actually available to the style-profile builder for each of the 27 supplied titles.",
+        "This table is the reality check for the corpus. It shows which of the 27 supplied titles were read as full text and which ones only contributed bibliographic signal.",
         "",
         "| # | Year | Journal | Title | DOI | Evidence Tier | PMCID/Source |",
         "|---:|---|---|---|---|---|---|",
@@ -509,7 +509,7 @@ def render_coverage(results: dict[str, object]) -> str:
     lines.extend(
         [
             "",
-            "Evidence tiers:",
+            "Evidence levels:",
             "- `target PDF full text`: local PDF was available and parsed.",
             "- `target public PMC HTML full text`: no local PDF, but a public PMC HTML page was parsed without storing raw text.",
             "- `target abstract/title only`: no full text was available through the public sources checked; only abstract/title-level text informed aggregate signals.",

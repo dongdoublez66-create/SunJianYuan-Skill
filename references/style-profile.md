@@ -1,6 +1,6 @@
 # Sun Jianyuan Style Profile
 
-This profile summarizes aggregate traits from the supplied 27-title list plus any auxiliary PDFs in the local article folder. It avoids long verbatim excerpts.
+This note records what can be learned from the current corpus. It keeps the focus on patterns rather than excerpts: terms that recur, moves that organize the argument, and the level of caution used when moving from data to mechanism.
 
 ## Corpus Coverage
 
@@ -12,16 +12,16 @@ This profile summarizes aggregate traits from the supplied 27-title list plus an
 - Target abstract/title only: 0
 - Target metadata/title only: 8
 
-Read `references/corpus-coverage.md` before assuming that a style point is based on all 27 full texts.
+Check `references/corpus-coverage.md` before treating any pattern here as if it came from all 27 full texts.
 
-## Aggregate Text Statistics
+## Text Statistics
 
 - Sources analyzed: 28
 - Approximate words extracted: 131382
 - Sentences analyzed: 5277
 - Sentence length: mean 21.6 words, median 18, p90 42
 
-## Documents And Evidence Tier
+## Documents And Evidence Level
 
 - Target; target PDF full text; 2024 Acta Epileptologica: Balloon cells in malformations of cortical development: friends or foes?
 - Target; target PDF full text; 2024 Nature Communications: Paraventricular hypothalamic RUVBL2 neurons suppress appetite by enhancing excitatory synaptic transmission in distinct neurocircuits
@@ -156,12 +156,12 @@ Read `references/corpus-coverage.md` before assuming that a style point is based
 | these data | 11 |
 | our data | 11 |
 
-## Drafting Implications
+## Practical Takeaways
 
-- Favor a mechanism-first frame: define a biological process, name the unresolved causal step, then connect the experimental system to that mechanism.
-- Balance assertive evidence verbs with cautious interpretation: use strong verbs for direct observations and hedged verbs for models, implications, and mechanisms that remain inferential.
-- Keep claims anchored to synaptic, circuit, channel, release, endocytosis/exocytosis, or structural-function language when the science allows.
-- Use compact transitions that synthesize evidence before interpretation, especially in abstracts, introductions, and discussion openings.
-- Avoid ornate rhetoric. Prefer precise technical nouns, active analytical verbs, and restrained significance claims.
-- When revising, preserve scientific uncertainty. Do not convert speculative mechanistic language into overclaiming.
-- Treat style features from abstract/title-only entries as weak evidence; rely more on PDF and public HTML full-text entries.
+- Start from the mechanism: name the biological process, identify the unresolved step, and then bring in the experiment.
+- Use strong verbs for direct observations, but soften the sentence when the claim becomes a model or interpretation.
+- Keep the argument close to synaptic, circuit, channel, release, endocytosis/exocytosis, or structure-function language when the user's science allows it.
+- Let transitions do real work: contrast, add evidence, or synthesize before interpreting.
+- Prefer technical nouns and analytical verbs over decorative adjectives.
+- Preserve uncertainty. A speculative mechanism should not be revised into a proven one.
+- Treat title-only entries as background signal, not as equal evidence with full-text papers.

@@ -1,83 +1,80 @@
 ---
 name: sun-jianyuan-style
-description: Draft, revise, diagnose, or transform neuroscience and biomedical research writing into a Sun Jianyuan aligned academic style. Use when the user asks to write or polish papers, abstracts, introductions, results, discussions, cover letters, reviewer responses, grant-style summaries, oral presentation scripts, slide narration, or Chinese-to-English academic prose in a style consistent with Sun Jianyuan's published scientific writing and inferred academic speaking voice.
+description: Help draft, revise, or diagnose neuroscience and biomedical research writing in a style aligned with Sun Jianyuan's published papers. Use for manuscript abstracts, introductions, results, discussions, cover letters, reviewer responses, grant-like summaries, slide narration, oral reports, and Chinese-to-English academic prose that should sound mechanism-first, data-bound, and scientifically restrained.
 ---
 
 # Sun Jianyuan Style
 
-## Purpose
+## What This Is For
 
-Use this skill to help the user write or revise scientific text with the high-level rhetorical habits observed in Sun Jianyuan's published papers: mechanism-first framing, precise synaptic/neural terminology, restrained significance claims, evidence-led paragraphing, and calibrated uncertainty.
+This guide helps shape research text toward the habits that show up repeatedly in Sun Jianyuan's papers: start from the biological mechanism, keep the terminology precise, let the evidence carry the paragraph, and avoid making the conclusion larger than the data.
 
-Do not impersonate Sun Jianyuan, claim that he wrote the text, or copy distinctive source sentences. Align with the style profile while preserving the user's actual science, data, and authorship.
+Keep the authorship with the user. Avoid lifting memorable sentences from the papers. The aim is alignment at the level of structure, judgment, and scientific tone.
 
-## Evidence Boundary
+## What It Can Know
 
-This skill cannot fully reproduce Sun Jianyuan's real spoken manner unless the user provides actual speech evidence such as talk recordings, transcripts, interviews, course audio, lab-meeting notes, or Q&A records. Without those materials, generate an inferred academic presentation voice derived from published writing: mechanism-first, data-bound, concise, and cautious.
+The corpus behind the current version is mostly written papers. That is enough to infer a paper-like reporting voice, but not enough to recreate someone's real spoken manner. Real speech would need recordings, transcripts, interviews, lectures, lab-meeting notes, or Q&A records.
 
-When the user asks for "speaking style", explicitly treat it as "paper-style scientific logic converted into oral reporting style" unless speech samples are provided. If the user provides speech samples, first extract recurring discourse markers, pacing, self-corrections, audience-facing explanations, and Q&A habits, then update the speaking guidance before drafting.
+When asked for a "speaking style", treat it as paper logic translated into an academic oral report unless the user supplies actual speech samples. If speech samples are supplied, first study their openings, transitions, pacing, uncertainty language, figure descriptions, and Q&A habits, then adapt the speaking notes.
 
-## Required References
+## What To Read
 
-Read these files before producing a substantial draft or revision:
+For any substantial draft or rewrite, read these in order:
 
-- `references/corpus-coverage.md`: source coverage for the 27 supplied titles; distinguishes local PDF full text, public PMC HTML full text, and metadata/title-only entries.
-- `references/style-profile.md`: corpus-derived style statistics, terminology, rhetorical moves, and drafting implications.
-- `references/writing-and-speaking-protocol.md`: workflow for papers, manuscript sections, reviewer responses, and oral presentation scripts.
+- `references/corpus-coverage.md` for what the corpus actually contains.
+- `references/style-profile.md` for the style signals extracted from the papers.
+- `references/writing-and-speaking-protocol.md` for practical writing and speaking moves.
 
-For a very small request, such as rewriting one sentence, read `references/writing-and-speaking-protocol.md` first and consult `references/style-profile.md` only if terminology or tone is uncertain. When making claims about the source corpus, always check `references/corpus-coverage.md`.
+For a one-sentence polish, start with `references/writing-and-speaking-protocol.md`; check the profile only if the wording or certainty level is unclear. Whenever you mention the source corpus, check `references/corpus-coverage.md` first.
 
-## Workflow
+## Working Method
 
-1. Identify the requested output type: manuscript section, abstract, cover letter, response, grant-style summary, slide narration, or talk script.
-2. Determine the scientific level: molecular, synaptic, circuit, behavioral, disease, method, structural, or review synthesis.
-3. Separate direct findings from inferred mechanisms and speculative implications.
-4. Draft or revise with a mechanism-first structure:
-   - establish the system or process,
-   - define the unresolved gap,
-   - introduce the method or model,
-   - report key evidence,
-   - state a restrained mechanistic contribution.
-5. Calibrate certainty:
-   - use assertive evidence verbs for measured results,
-   - use cautious verbs for interpretation, models, and future implications.
-6. Remove decorative or promotional language.
-7. Return a polished version plus a brief note explaining the main style changes when useful.
+1. Decide what the user is writing: paper section, abstract, response letter, grant-style paragraph, slide narration, or spoken report.
+2. Identify the scientific level: molecule, synapse, circuit, behavior, disease, method, structure, or review.
+3. Separate what the data directly show from what the data only suggest.
+4. Build the text around a simple path:
+   - name the process or system,
+   - state the unresolved mechanism,
+   - introduce the method or preparation,
+   - report the main observation,
+   - close with a restrained mechanistic contribution.
+5. Use stronger verbs for direct measurements and softer verbs for interpretation.
+6. Remove decoration, promotion, and unsupported certainty.
 
-## Output Modes
+## Common Uses
 
 ### Manuscript Drafting
 
-Build a compact, journal-ready section with precise nouns and stable terminology. Prefer direct scientific logic over broad field narration.
+Write compact, journal-ready prose. Keep the background close to the mechanism being tested; avoid broad neuroscience overview unless the section truly needs it.
 
 ### Manuscript Revision
 
-Preserve the user's meaning and data. Improve paragraph order, claim calibration, transitions, and mechanistic clarity. Do not add unsupported findings.
+Preserve the user's data and meaning. Improve order, transitions, certainty, and mechanistic clarity. Do not invent findings.
 
 ### Reviewer Response
 
-Use a calm, technical, evidence-focused tone. Acknowledge the point, state the change or rationale, and quote only the user's supplied manuscript text when needed.
+Answer calmly and technically. Acknowledge the point, state what changed or why it did not change, and keep the tone focused on evidence.
 
-### Oral Presentation / Speaking
+### Oral Presentation
 
-Convert paper logic into a concise spoken arc: problem, mechanism, evidence. Because the current corpus is mainly written papers, treat this as an inferred academic presentation voice unless the user supplies actual speech transcripts. For substantial reports, follow the detailed speaking protocol in `references/writing-and-speaking-protocol.md`.
+Turn paper logic into a spoken path: question, preparation, observation, interpretation, next experiment. For longer reports, follow `references/writing-and-speaking-protocol.md`.
 
-## Corpus Refresh
+## Updating The Corpus Notes
 
-If the user adds new Sun Jianyuan PDFs or asks to update the style profile, run:
+When new Sun Jianyuan PDFs or public article sources are added, refresh the profile with:
 
 ```bash
 python scripts/build_style_profile.py <article_dir> --include-public-html --output references/style-profile.md --coverage-output references/corpus-coverage.md
 ```
 
-Use the bundled Python runtime with `pdfplumber` and `pypdf` when available. The script reads local PDFs first, then optionally queries Europe PMC/PMC for public HTML sources when `--include-public-html` is set. It emits aggregate style observations and avoids long verbatim excerpts.
+Use a Python environment with `pdfplumber` and `pypdf` when possible. The script reads local PDFs first, optionally checks Europe PMC/PMC for public HTML, and writes only aggregate notes rather than long source excerpts.
 
-## Quality Checks
+## Final Check
 
-Before finalizing:
+Before returning the draft, make sure:
 
-- Verify every causal or mechanistic claim is supported by the user's data or phrased as inference.
-- Keep technical terminology stable.
-- Prefer restrained contribution language over inflated impact language.
-- Avoid copying source-paper wording beyond short generic scientific phrases.
-- For Chinese input, translate the scientific logic first, then revise into the target English style.
+- causal claims are supported or clearly softened;
+- mechanisms and observations are not mixed together;
+- terminology stays stable;
+- the ending is contribution-focused rather than promotional;
+- no distinctive source-paper sentence has been copied.

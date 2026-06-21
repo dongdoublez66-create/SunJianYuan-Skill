@@ -1,6 +1,6 @@
 # Corpus Coverage
 
-This table records what was actually available to the style-profile builder for each of the 27 supplied titles.
+This table is the reality check for the corpus. It shows which of the 27 supplied titles were read as full text and which ones only contributed bibliographic signal.
 
 | # | Year | Journal | Title | DOI | Evidence Tier | PMCID/Source |
 |---:|---|---|---|---|---|---|
@@ -32,7 +32,7 @@ This table records what was actually available to the style-profile builder for 
 | 26 | 2002 | Nature | Single and multiple vesicle fusion induce different rates of endocytosis at a central synapse | [10.1038/417555a](https://doi.org/10.1038/417555a) | metadata/title only |  |
 | 27 | 2001 | Neuron | Fast Kinetics of Exocytosis Revealed by Simultaneous Measurements of Presynaptic Capacitance and Postsynaptic Currents at a Central Synapse | [10.1016/s0896-6273(01)00271-9](https://doi.org/10.1016/s0896-6273(01)00271-9) | metadata/title only |  |
 
-Evidence tiers:
+Evidence levels:
 - `target PDF full text`: local PDF was available and parsed.
 - `target public PMC HTML full text`: no local PDF, but a public PMC HTML page was parsed without storing raw text.
 - `target abstract/title only`: no full text was available through the public sources checked; only abstract/title-level text informed aggregate signals.
