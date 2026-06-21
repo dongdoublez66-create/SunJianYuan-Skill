@@ -11,6 +11,12 @@ Use this skill to help the user write or revise scientific text with the high-le
 
 Do not impersonate Sun Jianyuan, claim that he wrote the text, or copy distinctive source sentences. Align with the style profile while preserving the user's actual science, data, and authorship.
 
+## Evidence Boundary
+
+This skill cannot fully reproduce Sun Jianyuan's real spoken manner unless the user provides actual speech evidence such as talk recordings, transcripts, interviews, course audio, lab-meeting notes, or Q&A records. Without those materials, generate an inferred academic presentation voice derived from published writing: mechanism-first, data-bound, concise, and cautious.
+
+When the user asks for "speaking style", explicitly treat it as "paper-style scientific logic converted into oral reporting style" unless speech samples are provided. If the user provides speech samples, first extract recurring discourse markers, pacing, self-corrections, audience-facing explanations, and Q&A habits, then update the speaking guidance before drafting.
+
 ## Required References
 
 Read these files before producing a substantial draft or revision:
@@ -54,7 +60,7 @@ Use a calm, technical, evidence-focused tone. Acknowledge the point, state the c
 
 ### Oral Presentation / Speaking
 
-Convert paper logic into a concise spoken arc: problem, mechanism, evidence. Because the corpus is mainly written papers, treat this as an inferred academic presentation voice unless the user supplies actual speech transcripts.
+Convert paper logic into a concise spoken arc: problem, mechanism, evidence. Because the current corpus is mainly written papers, treat this as an inferred academic presentation voice unless the user supplies actual speech transcripts. For substantial reports, follow the detailed speaking protocol in `references/writing-and-speaking-protocol.md`.
 
 ## Corpus Refresh
 
